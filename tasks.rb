@@ -1,3 +1,4 @@
+require_relative "colors"
 class Task
   attr_accessor :number
   attr_reader :name, :period, :compute_time, :priority
@@ -6,6 +7,9 @@ class Task
     @period = args[:period]
     @compute_time = args[:compute_time]
     @priority = args[:priority]
+  end
+  def to_s
+    colorize(@number.to_s, @number)
   end
 end
 TASKS = []
