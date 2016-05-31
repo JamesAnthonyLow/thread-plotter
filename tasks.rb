@@ -1,4 +1,5 @@
 class Task
+  attr_reader :name, :period, :compute_time, :priority
   def initialize(args={})
     @name = args[:name]
     @period = args[:period]
@@ -12,4 +13,4 @@ TASKS << Task.new(:name => "Target Tracking", :period => 40, :compute_time => 2,
 TASKS << Task.new(:name => "Aircraft Flight Data", :period => 55, :compute_time => 8, :priority => 5)
 TASKS << Task.new(:name => "Aircraft Steering", :period => 80, :compute_time => 6, :priority => 4)
 TASKS << Task.new(:name => "Radar Search", :period => 80, :compute_time => 2, :priority => 4)
-TASKS << Task.new(:name => "Weapoin Trajectory", :period => 100, :compute_time => 7, :priority => 3)
+TASKS << Task.new(:name => "Weapon Trajectory", :period => 100, :compute_time => 7, :priority => 3)
