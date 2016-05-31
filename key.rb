@@ -8,3 +8,9 @@ TASKS.each_with_index do |t, i|
   printf("|%s%-19s|%-20s|%-20s|%-20s|%-20s|\n", t.to_s, "", t.name, t.period, t.compute_time, t.priority.to_s)
   printf("-"*106+"\n")
 end
+count = 0
+while true
+  printf("#{count}\n")
+  sleep(0.4)
+  count+=1
+end
