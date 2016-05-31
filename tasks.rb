@@ -1,18 +1,33 @@
 require_relative "colors"
+TASKS = []
 class Task
   attr_accessor :number
+  attr_accessor :queue
   attr_reader :name, :period, :compute_time, :priority
   def initialize(args={})
     @name = args[:name]
     @period = args[:period]
     @compute_time = args[:compute_time]
     @priority = args[:priority]
+    @queue = 0
+    @print = false
   end
-  def to_s
-    colorize(@number.to_s, @number)
+  def enqueue
+    @queue += @compute_time
+  end
+  def dequeue
+    @queue -= 1
+  end
+  def stamp(justify=(95/TASKS.length).floor) 
+    colorize("#{@number}#{" "*justify}", @number)
+  end
+  def print!
+    @print = !@print 
+  end
+  def print?
+    @print
   end
 end
-TASKS = []
 TASKS << Task.new(:name => "Weapon Release", :period => 10, :compute_time => 1, :priority => 7)
 TASKS << Task.new(:name => "Target Tracking", :period => 40, :compute_time => 2, :priority => 6)
 TASKS << Task.new(:name => "Aircraft Flight Data", :period => 55, :compute_time => 8, :priority => 5)
