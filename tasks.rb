@@ -19,7 +19,7 @@ class Task
   def dequeue
     @queue -= 1
   end
-  def stamp(justify=(95/TASKS.length).floor) 
+  def stamp(justify=(50/TASKS.length).floor) 
     if SLEEP > 0
       colorize("#{@number}#{" "*justify}", @number)
     else
