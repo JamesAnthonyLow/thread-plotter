@@ -1,6 +1,6 @@
 require_relative "colors"
 TASKS = []
-SLEEP = 0.1
+SLEEP = 0
 class Task
   attr_accessor :number
   attr_accessor :queue
