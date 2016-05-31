@@ -1,6 +1,10 @@
 require_relative "tasks"
 
 def line; printf("-"*106+"\n"); end
+trap "SIGINT" do
+  puts "Exiting"
+  exit 130
+end
 
 line
 printf("|%-20s|%-20s|%-20s|%-20s|%-20s|\n", "Task Number", "Task Name", "Period", "Compute Time", "Priority")
@@ -19,7 +23,7 @@ TASKS.each do |t|
 end
 printf("\n")
 line
-while true
+while count < 3000
   printf("|%-4d|", count)
   TASKS.each do |t| 
     if (count % t.period) == 0 
@@ -40,6 +44,6 @@ while true
   end
   printf("\n")
   line
-  sleep(0.4)
+  sleep(SLEEP)
   count+=1
 end
