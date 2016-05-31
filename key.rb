@@ -11,7 +11,7 @@ TASKS.each_with_index do |t, i|
   line
 end
 printf("\n")
-count = 0
+count = 1
 line
 printf("|%-4s|", "t")
 TASKS.each do |t|
