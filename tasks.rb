@@ -34,4 +34,4 @@ TASKS << Task.new(:name => "Aircraft Flight Data", :period => 55, :compute_time 
 TASKS << Task.new(:name => "Aircraft Steering", :period => 80, :compute_time => 6, :priority => 4)
 TASKS << Task.new(:name => "Radar Search", :period => 80, :compute_time => 2, :priority => 4)
 TASKS << Task.new(:name => "Weapon Trajectory", :period => 100, :compute_time => 7, :priority => 3)
-SLEEP = 0
+SLEEP = 0.1
