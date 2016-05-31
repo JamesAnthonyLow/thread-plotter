@@ -1,4 +1,5 @@
 class Task
+  attr_accessor :number
   attr_reader :name, :period, :compute_time, :priority
   def initialize(args={})
     @name = args[:name]
