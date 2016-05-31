@@ -1,5 +1,6 @@
 require_relative "colors"
 TASKS = []
+SLEEP = 0.1
 class Task
   attr_accessor :number
   attr_accessor :queue
@@ -19,7 +20,11 @@ class Task
     @queue -= 1
   end
   def stamp(justify=(95/TASKS.length).floor) 
-    colorize("#{@number}#{" "*justify}", @number)
+    if SLEEP > 0
+      colorize("#{@number}#{" "*justify}", @number)
+    else
+      "#{@number.to_s*justify} "
+    end
   end
   def print!
     @print = !@print 
@@ -34,4 +39,3 @@ TASKS << Task.new(:name => "Aircraft Flight Data", :period => 55, :compute_time 
 TASKS << Task.new(:name => "Aircraft Steering", :period => 80, :compute_time => 6, :priority => 4)
 TASKS << Task.new(:name => "Radar Search", :period => 80, :compute_time => 2, :priority => 4)
 TASKS << Task.new(:name => "Weapon Trajectory", :period => 100, :compute_time => 7, :priority => 3)
-SLEEP = 0.1

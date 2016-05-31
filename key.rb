@@ -7,7 +7,7 @@ trap "SIGINT" do
 end
 
 line
-printf("|%-20s|%-20s|%-20s|%-20s|%-20s|\n", "Task Number", "Task Name", "Period", "Compute Time", "Priority")
+printf("|%-20s|%-20s|%-20s|%-20s|%-20s|\n", "Task Stamp", "Task Name", "Period", "Compute Time", "Priority")
 line
 TASKS.each_with_index do |t, i|
   t.number = i+1
