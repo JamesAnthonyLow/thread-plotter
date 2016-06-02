@@ -1,6 +1,7 @@
 require_relative "tasks"
 
 def line; printf("-"*68+"\n"); end
+
 trap "SIGINT" do
   puts "Exiting"
   exit 130
